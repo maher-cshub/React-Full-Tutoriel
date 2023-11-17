@@ -1,12 +1,12 @@
 .header{
-    background: lightgreen;
+    background: #B3FA39;
+    background: linear-gradient(to top left, #B3FA39 23%, #E4FA1E 60%);    
     display: block;
     width: 90vw;
     max-width: 800px;
-    position: fixed;
+    position: relative;
     top: 0;
-    margin: 10px;
-    border: 2px solid;
+    margin: 10px auto;
     border-radius: 10px;
 }
 
@@ -14,12 +14,11 @@ ul{
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    justify-items: center;
+    justify-content: space-around;
 }
 
 li{
-    margin: auto 5px;
+    margin: auto 10px;
 }
 
 a{
@@ -29,4 +28,20 @@ a{
     font-weight: bolder;
     font-variant: small-caps;
     text-transform: capitalize;
+    color: black;
+    font-size: larger;
+}
+
+a:hover{
+    color: rgb(0, 212, 32)
+}
+
+a:visited{
+    color: rgb(0, 133, 20)02, 0.86)
+}
+
+
+img{
+    height: 60px;
+    aspect-ratio: 4 / 2;
 }
