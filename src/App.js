@@ -8,8 +8,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <HelloWorld1 firstname="omar"/>
-        <HelloWorld2 lastname="farid"/>
+
+        <HelloWorld1 label_value="omar" label_name="firstname" label_type="text">
+          <p>please enter your firstname</p>
+        </HelloWorld1>
+
+        <HelloWorld2 lastname="farid">
+          <p>please enter your last name</p>
+        </HelloWorld2>
+        
       </header>
     </div>
   );

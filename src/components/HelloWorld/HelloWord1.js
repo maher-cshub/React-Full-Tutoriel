@@ -1,3 +1,9 @@
-export default function HellWorld1({firstname}){
-    return (<h2>"Im a function component"  {firstname} is a prop from my parent</h2>)   
+export default function HellWorld1({label_value,label_name,label_type,children}){
+    return (
+        <>
+            <label>{label_name}</label>
+            <input type={label_type} name={label_name} placeholder={label_value}/>
+            {children}
+        </>
+    )   
 }
