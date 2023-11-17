@@ -1,3 +1,3 @@
-export default function HellWorld1(){
-    return (<h1>Hello World1 "I am a function component"</h1>)   
+export default function HellWorld1({firstname}){
+    return (<h2>"Im a function component"  {firstname} is a prop from my parent</h2>)   
 }
