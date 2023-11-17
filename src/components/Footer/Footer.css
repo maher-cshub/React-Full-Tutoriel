@@ -1,0 +1,31 @@
+.footer{
+    display: block;
+    width: 90vw;
+    max-width: 800px;
+    position: fixed;
+    bottom: 0;
+    margin: 10px;
+    margin-bottom: 30px;
+    height: 20px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+}
+
+li{
+    margin: auto 5px;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'trebuchet ms';
+    font-style: italic;
+    font-weight: bolder;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}

@@ -1,0 +1,32 @@
+.header{
+    background: lightgreen;
+    display: block;
+    width: 90vw;
+    max-width: 800px;
+    position: fixed;
+    top: 0;
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+}
+
+li{
+    margin: auto 5px;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'trebuchet ms';
+    font-style: italic;
+    font-weight: bolder;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}

@@ -2,22 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import HelloWorld1 from './components/HelloWorld/HelloWord1';
 import HelloWorld2 from "./components/HelloWorld/HelloWorld2"
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header></Header>
 
-        <HelloWorld1 label_value="omar" label_name="firstname" label_type="text">
-          <p>please enter your firstname</p>
-        </HelloWorld1>
 
-        <HelloWorld2 lastname="farid">
-          <p>please enter your last name</p>
-        </HelloWorld2>
-        
-      </header>
+      <Footer></Footer>
     </div>
   );
 }
