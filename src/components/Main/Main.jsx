@@ -7,7 +7,9 @@ function Main() {
 
   useEffect(() => {
     async function get_pokis() {
-      const response = await fetch("https://pokebuildapi.fr/api/v1/pokemon/");
+      const response = await fetch(
+        "https://pokebuildapi.fr/api/v1/pokemon/limit/20"
+      );
       const pokemons = await response.json();
       set_pokis(pokemons);
     }

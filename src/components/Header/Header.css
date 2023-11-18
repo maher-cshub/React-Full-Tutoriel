@@ -15,12 +15,11 @@ nav{
     margin: 10px auto;
 }
 
-ul{
+nav ul{
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 0 auto;
     padding: 0 0;
 }
 
