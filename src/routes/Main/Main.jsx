@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Main.css";
-import Card from "../Card/Card.jsx";
+import Card from "../../components/Card/Card.jsx";
 
 function Main() {
   const [pokemons, set_pokis] = useState([]);
@@ -8,14 +8,17 @@ function Main() {
   useEffect(() => {
     async function get_pokis() {
       const response = await fetch(
-        "https://pokebuildapi.fr/api/v1/pokemon/limit/20"
+        "https://pokebuildapi.fr/api/v1/pokemon/limit/10"
       );
-      const pokemons = await response.json();
-      set_pokis(pokemons);
+      const result = await response.json();
+      console.log(pokemons);
+      if (pokemons.length === 0) {
+        set_pokis(result);
+      }
     }
 
     get_pokis();
-  }, []);
+  }, [pokemons]);
 
   return (
     <main className="main">

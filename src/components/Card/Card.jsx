@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.css";
+import { Link } from "react-router-dom";
 
 function Card({ name, image }) {
   return (
@@ -15,7 +16,9 @@ function Card({ name, image }) {
             <img src={image} alt="" />
           </div>
           <div className="front-content">
-            <small className="badge">Learn More</small>
+            <small className="badge">
+              <Link to={`/${name}`}>Learn More</Link>
+            </small>
             <div className="description">
               <div className="title">
                 <p className="title">
@@ -31,3 +34,5 @@ function Card({ name, image }) {
 }
 
 export default Card;
+
+//react routing and passing params?

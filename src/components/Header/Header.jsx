@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import pokemon_logo from "../../static/pokemon_logo.webp";
 
@@ -8,15 +9,17 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="#home" class="active">
+            <Link activeClassName="active" to="/">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <img src={pokemon_logo} alt="" />
+            <Link to="/">
+              <img src={pokemon_logo} alt="" />
+            </Link>
           </li>
           <li>
-            <a href="#about">About</a>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
@@ -26,4 +29,4 @@ function Header() {
 
 export default Header;
 
-//src of image in react ?
+//react links in header?react links error useLocation() may be used only in the context of a <Router> component?
