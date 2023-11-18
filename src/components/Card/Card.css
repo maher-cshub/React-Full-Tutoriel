@@ -202,6 +202,11 @@
   object-position: center;
 }
 
+.front .img img {
+  height: 70% !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
 .circle {
   width: 90px;
   height: 90px;

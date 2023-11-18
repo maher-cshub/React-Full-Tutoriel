@@ -1,28 +1,25 @@
 import React from "react";
 import "./Card.css";
 
-function Card() {
+function Card({ name, image }) {
   return (
     <div className="card">
       <div className="content">
         <div className="back">
           <div className="back-content">
-            <strong>Hover Me</strong>
+            <strong>{name}</strong>
           </div>
         </div>
         <div className="front">
           <div className="img">
-            <div className="circle"></div>
-            <div className="circle" id="right"></div>
-            <div className="circle" id="bottom"></div>
+            <img src={image} alt="" />
           </div>
-
           <div className="front-content">
-            <small className="badge">Pasta</small>
+            <small className="badge">Learn More</small>
             <div className="description">
               <div className="title">
                 <p className="title">
-                  <strong>Spaguetti Bolognese</strong>
+                  <strong>{name}</strong>
                 </p>
               </div>
             </div>
