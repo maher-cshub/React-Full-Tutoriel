@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import "./Main.css";
-import Card from "../../components/Card/Card.jsx";
+const Card = React.lazy(() => import("../../components/Card/Card.jsx"));
+//import Card from "../../components/Card/Card.jsx";
 
 function Main() {
   const [pokemons, set_pokis] = useState([]);
 
   useEffect(() => {
     async function get_pokis() {
-      const response = await fetch(
-        "https://pokebuildapi.fr/api/v1/pokemon/limit/10"
-      );
+      const response = await fetch("https://pokebuildapi.fr/api/v1/pokemon/");
       const result = await response.json();
       console.log(pokemons);
-      if (pokemons.length === 0) {
-        set_pokis(result);
-      }
+      set_pokis(result);
     }
 
     get_pokis();
@@ -24,7 +21,9 @@ function Main() {
     <main className="main">
       <section className="layout">
         {pokemons.map((element) => (
-          <Card name={element.name} image={element.image}></Card>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Card name={element.name} image={element.image}></Card>
+          </Suspense>
         ))}
       </section>
     </main>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Card({ name, image }) {
   return (
@@ -13,7 +14,7 @@ function Card({ name, image }) {
         </div>
         <div className="front">
           <div className="img">
-            <img src={image} alt="" />
+            <LazyLoadImage src={image}></LazyLoadImage>
           </div>
           <div className="front-content">
             <small className="badge">
@@ -35,4 +36,4 @@ function Card({ name, image }) {
 
 export default Card;
 
-//react routing and passing params?
+//react routing and passing multiple params?
