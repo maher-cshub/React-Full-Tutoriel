@@ -1,0 +1,68 @@
+.header{
+    background: #B3FA39;
+    background: linear-gradient(to top left, #B3FA39 23%, #E4FA1E 60%);    
+    display: block;
+    width: 90vw;
+    max-width: 800px;
+    position: relative;
+    top: 0;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+nav{
+    position: relative;
+    margin: 10px auto;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 0;
+}
+
+li{
+    margin: auto 10px;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'trebuchet ms';
+    font-style: italic;
+    font-weight: bolder;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    color: black;
+    font-size: larger;
+}
+
+a:hover{
+    color: rgb(0, 212, 32)
+}
+
+a:visited{
+    color: rgb(0, 133, 20)02, 0.86)
+}
+
+
+img{
+    height: 60px;
+    aspect-ratio: 4 / 2;
+}
+
+
+@media (max-width: 600px){
+
+    .header{
+        width: 80vw;
+    }
+    li{
+      margin: auto 1px;  
+    }
+    img{
+        height: 30px;
+        aspect-ratio: 4 / 2;
+    }   
+}
