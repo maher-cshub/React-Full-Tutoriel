@@ -10,12 +10,11 @@ function Main() {
     async function get_pokis() {
       const response = await fetch("https://pokebuildapi.fr/api/v1/pokemon/");
       const result = await response.json();
-      console.log(pokemons);
       set_pokis(result);
     }
 
     get_pokis();
-  }, [pokemons]);
+  }, []);
 
   return (
     <main className="main">
