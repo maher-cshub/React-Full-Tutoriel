@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "@mui/material/Rating";
 
 function ProductCard({ product }) {
   return (
@@ -14,7 +15,15 @@ function ProductCard({ product }) {
         <h3 className="inline mb-1 text-xs tracking-widest text-gray-500 title-font">
           {product.category}
         </h3>
-        <span className="left-0 float-right">{product.rating.rate}</span>
+        <div className="flex justify-center float-right">
+          <Rating
+            name="half-rating-read"
+            defaultValue={product.rating.rate}
+            precision={0.1}
+            readOnly
+          />
+          <span>{product.rating.rate}/5</span>
+        </div>
         <h2 className="text-lg font-medium text-gray-900 title-font">
           {product.title}
         </h2>
