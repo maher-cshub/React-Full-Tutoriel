@@ -39,16 +39,19 @@ import Header from "./mini_store_project/components/Header/Header";
 import Footer from "./mini_store_project/components/Footer/Footer";
 import Main from "./mini_store_project/routes/Main/Main";
 import About from "./mini_store_project/routes/About/About";
+import { useEffect, useRef } from "react";
 
 function App() {
+  const searchInputRef = useRef();
+
   return (
     <div className="App">
       <Router>
-        <Header></Header>
+        <Header ref={searchInputRef} />
 
         <Routes>
-          <Route path="/" exact Component={Main} />
-          <Route path="/about" Component={About} />
+          <Route path="/" exact element={<Main ref={searchInputRef} />} />
+          <Route path="/about" element={<About />} />
         </Routes>
 
         <Footer></Footer>
