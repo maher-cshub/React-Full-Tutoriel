@@ -1,20 +1,14 @@
 import { useRef, useEffect, forwardRef } from "react";
+import shop from "../../static/shop.png";
 
-const Header = forwardRef(({}, searchInputRef) => {
+const Header = forwardRef(({}, headerRef) => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav ref={headerRef} className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-        <a
-          href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Flowbite Logo"
-          />
+        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src={shop} className="h-8" alt="Flowbite Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            Mini Store
           </span>
         </a>
         <div className="flex md:order-2">
@@ -62,11 +56,11 @@ const Header = forwardRef(({}, searchInputRef) => {
               <span className="sr-only">Search icon</span>
             </div>
             <input
-              ref={searchInputRef}
               type="text"
               id="search-navbar"
-              className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg search_input ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search..."
+              data
             />
           </div>
           <button
@@ -117,10 +111,9 @@ const Header = forwardRef(({}, searchInputRef) => {
               </svg>
             </div>
             <input
-              ref={searchInputRef}
               type="text"
               id="search-navbar"
-              className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg search_input ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search..."
             />
           </div>

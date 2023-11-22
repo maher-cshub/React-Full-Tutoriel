@@ -1,17 +1,18 @@
 import { forwardRef, useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
-const Main = forwardRef(({}, searchInputRef) => {
+const Main = forwardRef(({}, headerRef) => {
   const api_url = "https://fakestoreapi.com";
   const [ProductList, setProductList] = useState([]);
   const [SearchInput, setSearchInput] = useState("");
 
-  const showProducts = (input = { SearchInput }) => {
-    console.log(input);
-    //javascript filter?
-    const ProductTemp = ProductList.filter((product) => {
-      return product.title.includes(input);
+  const filteredProducts = (productList, input) => {
+    return productList.filter((product) => {
+      return product.title.toLowerCase().includes(input); //|| product.description.toLowerCase().includes(input)
     });
+  };
+  const showProducts = (input = { SearchInput }) => {
+    const ProductTemp = filteredProducts(ProductList, input);
     return ProductTemp.map((product, key) => {
       return <ProductCard key={key} product={product}></ProductCard>;
     });
@@ -26,14 +27,17 @@ const Main = forwardRef(({}, searchInputRef) => {
 
   //on mount
   useEffect(() => {
-    getProducts();
-    const handleChange = (e, ref) => {
-      setSearchInput(ref.current.value);
+    const handleChange = (e) => {
+      const target = e.currentTarget;
+      console.log(target.value);
+      setSearchInput(target.value);
     };
-    searchInputRef.current.addEventListener(
-      "keyup",
-      handleChange(searchInputRef)
-    );
+    getProducts();
+    const search_input = headerRef.current.querySelectorAll(".search_input");
+
+    search_input.forEach((input) => {
+      input.addEventListener("keyup", handleChange);
+    });
   }, []);
 
   return (

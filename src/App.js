@@ -42,21 +42,21 @@ import About from "./mini_store_project/routes/About/About";
 import { useEffect, useRef } from "react";
 
 function App() {
-  const searchInputRef = useRef();
+  const headerRef = useRef();
 
   return (
-    <div className="App">
-      <Router>
-        <Header ref={searchInputRef} />
+    <Router>
+      <div className="App">
+        <Header ref={headerRef} />
 
         <Routes>
-          <Route path="/" exact element={<Main ref={searchInputRef} />} />
+          <Route path="/" exact element={<Main ref={headerRef} />} />
           <Route path="/about" element={<About />} />
         </Routes>
 
         <Footer></Footer>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
